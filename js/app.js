@@ -3,12 +3,14 @@ define([
     'angular',
     'angularResource',
     'angularRoute',
+    'angularBootstrap',
     'directives/menu',
     'directives/tile'
 ], function ($, angular) {
 
     angular.module('MaterialBootstrap', [
         "ngRoute",
+        "ui.bootstrap",
         "material.directive.menu",
         "material.directive.tile"
     ])
@@ -22,6 +24,9 @@ define([
                 })
                 .when('/card', {
                     templateUrl: 'view/ui-card.html'
+                })
+                .when('/collapse', {
+                    templateUrl: 'view/ui-collapse.html'
                 })
                 .otherwise({ redirectTo: '/' });
         }])
