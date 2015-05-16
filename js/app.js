@@ -28,6 +28,9 @@ define([
                 .when('/collapse', {
                     templateUrl: 'view/ui-collapse.html'
                 })
+                .when('/dropdown', {
+                    templateUrl: 'view/ui-dropdown.html'
+                })
                 .otherwise({ redirectTo: '/' });
         }])
         .controller('MainController', ['$rootScope', '$location', '$http',
