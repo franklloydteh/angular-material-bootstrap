@@ -20,6 +20,9 @@ define([
                 .when('/tile', {
                     templateUrl: 'view/ui-tile.html'
                 })
+                .when('/card', {
+                    templateUrl: 'view/ui-card.html'
+                })
                 .otherwise({ redirectTo: '/' });
         }])
         .controller('MainController', ['$rootScope', '$location', '$http',
