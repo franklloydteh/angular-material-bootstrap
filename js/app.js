@@ -3,17 +3,22 @@ define([
     'angular',
     'angularResource',
     'angularRoute',
-    'directives/menu'
+    'directives/menu',
+    'directives/tile'
 ], function ($, angular) {
 
     angular.module('MaterialBootstrap', [
         "ngRoute",
-        "material.directive.menu"
+        "material.directive.menu",
+        "material.directive.tile"
     ])
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider
                 .when('/', {
                     templateUrl: 'view/home.html'
+                })
+                .when('/tile', {
+                    templateUrl: 'view/ui-tile.html'
                 })
                 .otherwise({ redirectTo: '/' });
         }])
