@@ -31,15 +31,19 @@ define([
                 .when('/dropdown', {
                     templateUrl: 'view/ui-dropdown.html'
                 })
+                .when('/modal', {
+                    templateUrl: 'view/ui-modal.html'
+                })
                 .otherwise({ redirectTo: '/' });
         }])
-        .controller('MainController', ['$rootScope', '$location', '$http',
-            function ($rootScope, $location, $http, permissions) {
-                $rootScope.$on("$routeChangeSuccess", function () {
-                    $rootScope.loading = false;
-                });
-                $rootScope.userAgent = navigator.userAgent;
-                $rootScope.today = new Date();
+        .controller('MainController', ['$rootScope', '$modal',
+            function ($rootScope, $modal) {
+                $rootScope.openModal = function (name, wClass) {
+                    $modal.open({
+                        templateUrl: 'view/modal/' + name + '.html',
+                        windowClass: wClass
+                    });
+                }
             }]);
 
     angular.bootstrap(document, ['MaterialBootstrap']);

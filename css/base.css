@@ -9679,10 +9679,10 @@ input[type="checkbox"]:checked + .switch-toggle:after, input[type="radio"]:check
   padding: 48px 16px;
   position: relative;
 }
-.modal-dialog.modal-full {
+.modal-full > .modal-dialog{
   height: 100%;
 }
-.modal-dialog.modal-full .modal-content {
+.modal-full > .modal-dialog .modal-content {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
